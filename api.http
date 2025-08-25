@@ -1,0 +1,143 @@
+@baseUrl = http://localhost:5000
+@token =eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODg5ZDM0OWU0MjJkZWUzMWVjMDlhN2UiLCJpYXQiOjE3NTUxNDY4NTIsImV4cCI6MTc1NjQ0Mjg1Mn0.LWJUUtPrO90-rmoeE_wsHIe3ZZ4fj1GYt1Sh5S5nYhc
+POST {{baseUrl}}/package-lists
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "name": "White T-Shirt"
+}
+
+
+### Get all package lists
+GET {{baseUrl}}/package-lists/
+Authorization: Bearer {{token}}
+
+
+### Get a package list by id
+GET {{baseUrl}}/package-lists/6880c2975239c5d602c485bd
+Authorization: Bearer {{token}}
+
+### Update a package list
+PATCH {{baseUrl}}/package-lists/6888a8c4c70ed0c9619facb5
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "completed": true
+}
+
+### Delete a package list
+DELETE {{baseUrl}}/package-lists/6880c2975239c5d602c485bd
+Authorization: Bearer {{token}}
+
+### Create a user
+POST {{baseUrl}}/users
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "email": "john.doe2@gmail.com",
+  "password": "password"
+}
+
+### Register a user
+POST {{baseUrl}}/auth/register
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "email": "john.doe2@gmail.com",
+  "password": "password"
+}
+
+### Login a user
+POST {{baseUrl}}/auth/login
+Content-Type: application/json
+
+{
+  "email": "john.doe2@gmail.com",
+  "password": "password"
+}
+
+### Create a trip
+POST {{baseUrl}}/trips
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "title": "Trip from kathmandu to Pokhara",
+  "startDate": "2025-08-11",
+  "endDate": "2025-08-21",
+  "destinations":["kathmandu","Bandipur","Pokhara"],
+  "description": "This is a description of the trip to kathmandu",
+  "budget": {
+    "total": 50000,
+    "spent": 0
+  }
+}
+
+### Get all trips
+GET {{baseUrl}}/trips
+Authorization: Bearer {{token}}
+
+### Get a trip by id
+GET {{baseUrl}}/trips/689f055fb44d26a7b62c16dd
+Authorization: Bearer {{token}}
+
+### Add an expense to a trip
+POST {{baseUrl}}/trips/6889fdbcc8441e3f7af523f3/expenses
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "date": "2025-08-11",
+  "amount": 1100,
+  "name": "Taxi Fare"
+}
+
+### Create an itinerary
+POST {{baseUrl}}/itineraries/6889fdbcc8441e3f7af523f3
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "tripId": "6889fdbcc8441e3f7af523f3",
+  "title": "Day 1",
+  "description": "This is a description of the itinerary Day 1",
+  "date": "2025-07-31",
+  "activities": [
+    {
+      "name": "Check in at Hotel",
+      "time": "08:00 AM",
+      "notes": ["Check In", "Breakfast", "Rest"]
+    },
+    {
+      "name": "Visit Lake Side",
+      "time": "11:00 AM - 02:00 PM",
+      "notes": ["Visit Lake Side", "Tal Barahi Temple", "Do Boating", "Click Pictures"]
+    },
+    {
+      "name": "Visit Street 9",
+      "time": "02:00 PM - 03:00 PM",
+      "notes": ["Have Lunch", "Hire a Cab"]
+    }
+  ]
+}
+
+### Invite a collaborator to a trip
+POST {{baseUrl}}/trips/6899bc755549e9262fa2ce46/invite
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "email": ["neerajdon022@gmali.com"]
+}
+
+### Accept an invitation to a trip
+GET {{baseUrl}}/trips/6899bc755549e9262fa2ce46/invite/accept?token=
+Authorization: Bearer {{token}}
+
+### Delete a file from a trip
+DELETE {{baseUrl}}/trips/689f055fb44d26a7b62c16dd/files?fileId=wander-wise/trips/Trip from kathmandu to Pokhara_689f055fb44d26a7b62c16dd/hija2lyunvwwfls0ofz5
+Authorization:Bearer {{token}}
