@@ -1,4 +1,6 @@
-Wander-Wise 🌍✈️
+                                                                                Wander-Wise 🌍✈️
+
+                                                                                
 A comprehensive travel planning and management API built with Node.js, Express, and MongoDB. Wander-Wise helps travelers create, manage, and track their trips with features like budget management, expense tracking, and packing lists.
 
 🚀 Features
