@@ -1,5 +1,5 @@
 @baseUrl = http://localhost:5000
-@token =eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODg5ZDM0OWU0MjJkZWUzMWVjMDlhN2UiLCJpYXQiOjE3NTUxNDY4NTIsImV4cCI6MTc1NjQ0Mjg1Mn0.LWJUUtPrO90-rmoeE_wsHIe3ZZ4fj1GYt1Sh5S5nYhc
+@token =eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODg5ZDM0OWU0MjJkZWUzMWVjMDlhN2UiLCJpYXQiOjE3NTY4MzE4OTEsImV4cCI6MTc1ODEyNzg5MX0.bdi_htLGpRJnFn6NyTlg4yutvuaiXEfWefF0s_UeeZs
 POST {{baseUrl}}/package-lists
 Content-Type: application/json
 Authorization: Bearer {{token}}
@@ -15,7 +15,7 @@ Authorization: Bearer {{token}}
 
 
 ### Get a package list by id
-GET {{baseUrl}}/package-lists/6880c2975239c5d602c485bd
+GET {{baseUrl}}/package-lists/68bd56cda97f265aa40c013b
 Authorization: Bearer {{token}}
 
 ### Update a package list
